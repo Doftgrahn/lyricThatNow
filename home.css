@@ -15,28 +15,30 @@ body {
 }
 
 header {
-  height: 100px;
-  background-color: lightblue;
-  border: 1px solid black;
-}
-
-.menu {
   display: flex;
-  padding: 20px;
-  list-style-type: none;
+  height: 200px;
+  background-color: #1db954;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
 }
 
-.menu li {
-  padding: 20px;
+h1 {
+  margin: 0;
+  letter-spacing: 5px;
+  font-family: serif;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 main {
   display: flex;
   height: 700px;
-  background-color: #91E5F6;
+  background-color: #ffe3bd;
 }
 
 .main-container {
   width: 50%;
-  border:1px solid black;
+  border: 1px solid black;
 }
