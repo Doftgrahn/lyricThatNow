@@ -147,9 +147,13 @@ footer {
   height:100px;
   padding:50px;
   margin:30px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
 }
 #back-to-top {
 position: relative;
 bottom:0px;
-left:44%;
+text-align: center;
+/* left:44%; */
 }
