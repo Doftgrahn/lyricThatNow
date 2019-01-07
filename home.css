@@ -1,47 +1,76 @@
 /*
-#133C55
-#386FA4
-#59A5D8
-#84D2F6
-#91E5F6
+
+#B24C63
+#5438DC
+#357DED
+#56EEF4
+#32E875
+
+
 */
 
 body {
-  background-color: #133C55;
+  margin: 0;
+  background-color: #5438DC;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  font-family: monospace;
 }
 
 header {
   display: flex;
-  height: 200px;
-  background-color: #1db954;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  height: 200px;
   padding: 40px;
+  text-align: center;
+  background-color: #32E875;
 }
 
 h1 {
-  margin: 0;
-  letter-spacing: 5px;
-  font-family: serif;
-  margin-top: 20px;
   display: inline-block;
+  margin: 0;
+  margin-top: 20px;
+  letter-spacing: 10px;
 }
 
 main {
   display: flex;
-  height: 700px;
-  background-color: #ffe3bd;
+  background-color: #B24C63;
+}
+
+label {
+  padding: 10px;
 }
 
 .main-container {
   width: 50%;
-  border: 1px solid black;
+}
+
+#artist {
+  padding: 10px;
+}
+
+#title {
+  padding: 10px;
+}
+
+.input-music {
+  padding: 5px;
+  display: flex;
+}
+
+#add-title {
+  margin: 10px;
+}
+
+.title-artist-button {
+  
+  padding: 26px;
+  background-color: white;
+  box-shadow: 10px 10px black;
 }
 
 ul {

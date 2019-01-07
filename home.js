@@ -1,4 +1,11 @@
+// const url;
+// const apiKey;
+const artist = $('#artist');
+const song = $('#song');
+const addSong = $('#add-song');
+
 $(document).ready(() => {
+<<<<<<< HEAD
   const state = {
   playlist: []
 };
@@ -29,4 +36,28 @@ $(document).ready(() => {
     //$(".listOfSongs").append(elem);
     //$(".listOfSongs").show();
   };
+=======
+
+
+
+
+
+  addSong.on('click', event => {
+
+
+
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+>>>>>>> 0870195daa5bf52c855d46615b77e70b4583719a
 });
