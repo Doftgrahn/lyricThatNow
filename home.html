@@ -6,56 +6,52 @@
   <title>Agile Group</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="home.js"></script>
+  <link rel="stylesheet" type="text/css" href="button.css">
   <link rel="stylesheet" type="text/css" href="home.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 </head>
 
 <body>
-
-  <header>
-    <h1>iMusic</h1>
-    <h2>Find lyrics for your favourite songs!</h2>
-  </header>
-
   <main>
 
-    <div class="main-container music-container">
 
+    <h1> MusicThatShajt </h1>
 
-      <span>Artist</span><input type="text" name="fname" id="artist"><br>
-      <span>Song</span><input type="text" name="lname" id="song"><br>
-      <button id="add-song">Add to list</button>
+      <!-- <div class="playlist-text">
+      <h2>Create playlist</h2>
+      <p>
+        Write the information that you want to get.
+      </p>
+    </div> -->
 
-    </div>
-    <div class="main-container output-container">
-      <ul class="listOfSongs">
-        <li class="lineInTheList"></li>
+    <img src="högtalare.png" alt="bild" id="speakerPic">
+  </main>
+  <div class="title-artist-button">
+    <label for="artist">Artist</label>
+    <input type="text" id="artist" class="input-music" placeholder="Artist"><br>
+    <label for="title">Title</label>
+    <input type="text" id="title" class="input-music" placeholder="Title"><br>
+    <button class="btn-one btn" id="add-title">Add to list</button>
+  </div>
+
+</div>
+
+  <div class="bottom-arrow"></div>
+
+  <div class="music-output">
+    <div class="output">
+      <ul id="output-list">
       </ul>
-
-
-
-
     </div>
-
-  </main>
-
-
-
-    <div class="main-container music-container">
-
-      <div class="title-artist-button">
-        <label for="artist">Artist</label>
-        <input type="text" name="fname" id="artist" class="input-music" placeholder="Artist"><br>
-        <label for="title">Title</label>
-        <input type="text" name="lname" id="title" class="input-music" placeholder="Title"><br>
-        <button id="add-title">Add to list</button>
-      </div>
-
-
+    <div class="lyric-container">
+      <p></p>
     </div>
-    <div class="main-container output-container">
-    </div>
+  </div>
 
-  </main>
+
+
+
 
 </body>
 
