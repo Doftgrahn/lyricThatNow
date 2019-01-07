@@ -2,7 +2,7 @@
 // const apiKey;
 const artist = $('#artist');
 const song = $('#song');
-const addSong = $('#add-song');
+const addSong = $('#add-title');
 
 $(document).ready(() => {
   const state = {
@@ -11,7 +11,7 @@ $(document).ready(() => {
 
   //$("#listOfSongs").hide();
 
-  $("#add-song").click(()=>{
+  $("#add-title").click(()=>{
     console.log("button add song was clicked");
     let artist = $('#artist').val();
     let title = $('#song').val();
