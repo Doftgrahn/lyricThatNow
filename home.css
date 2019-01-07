@@ -5,6 +5,7 @@
 #84D2F6
 #91E5F6
 */
+
 body {
   background-color: #133C55;
 }
@@ -41,4 +42,8 @@ main {
 .main-container {
   width: 50%;
   border: 1px solid black;
+}
+
+ul {
+  list-style-type: none;
 }
