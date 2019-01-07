@@ -7,32 +7,68 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="home.js"></script>
   <link rel="stylesheet" type="text/css" href="home.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="button.css">
+
 </head>
 
 <body>
 
-  <header>
-    <h1>iPlayShoreline</h1>
-  </header>
-
   <main>
 
-    <div class="main-container music-container">
+    <div class="playlist-text">
 
-      <div class="title-artist-button">
-        <label for="artist">Artist</label>
-        <input type="text" name="fname" id="artist" class="input-music" placeholder="Artist"><br>
-        <label for="title">Title</label>
-        <input type="text" name="lname" id="title" class="input-music" placeholder="Title"><br>
-        <button id="add-title">Add to list</button>
-      </div>
+      <h2>Create playlist</h2>
+      <p>
+        Write the information that you want to get.
 
+      </p>
 
     </div>
-    <div class="main-container output-container">
-    </div>
-
   </main>
+
+<div class="img">
+
+</div>
+
+
+
+
+  <div class="title-artist-button">
+    <label for="artist">Artist</label>
+    <input type="text" id="artist" class="input-music" placeholder="Artist"><br>
+    <label for="title">Title</label>
+    <input type="text" id="title" class="input-music" placeholder="Title"><br>
+    <button id="add-title" class="btn-one">Add to list</button>
+  </div>
+
+
+  <div class="bottom-arrow"></div>
+
+
+
+  <div class="music-output">
+
+<div class="output">
+<ul id="output-list">
+</ul>
+
+
+</div>
+
+
+
+<div class="lyric-container"> </div>
+
+
+
+
+  </div>
+
+
+
+
+
 
 </body>
 
