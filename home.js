@@ -9,17 +9,28 @@ $(document).ready(() => {
   const state = {
     playlist: []
   };
-  //$("#listOfSongs").hide();
+
+
+  let playlist = localStorage.getItem('playlist');
+  // console.log('playlist är: ', typeof playlist, playlist);
+  if( playlist !== null ) {
+    state.playlist = JSON.parse(playlist);
+    state.playlist.forEach(song => {
+      console.log('Hittade sången:', song);
+      $('#output-list').append('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
+    })
+  }
+  // $("#listOfSongs").hide();
 
   $("#add-title").click(()=>{
     console.log("button add song was clicked");
     let artist = $('#artist').val();
-    let title = $('#song').val();
-    let button = $('<button>Get the information</button>');
+    let title = $('#title').val();
+    let button = $('<button>Get the lyrics</button>');
     button.click( () => getLyrics(artist, title) );
-    $(".lineInTheList").append("<li>" + artist + " - " + title + "</li>");// + '<button id="getLyrics">Get the lyrics</button>');
-    $(".lineInTheList").append(button);
-    state.playlist.push(artist, title);
+    $("#output-list").append(`<li class="line">` + artist + ` - ` + title + `<button class="getLyrics">Get the lyrics</button>` + `</li>`);// + '<button id="getLyrics">Get the lyrics</button>');
+    //$("#output-list").append(button);
+    state.playlist.push({ artist: artist, title: title });
     localStorage.setItem('playlist', JSON.stringify(state.playlist));
   });
 
