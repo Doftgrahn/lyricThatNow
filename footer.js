@@ -4,7 +4,7 @@ $(document).ready(() => {
   backToTop.on('click', event => {
     $("html, body").animate({
       scrollTop: 0
-    }, "slow");
+    }, 'slow');
     return false;
   });
 });
