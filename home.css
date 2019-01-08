@@ -151,6 +151,9 @@ label {
 #output-list {
   list-style-type: none;
 }
+.getLyrics {
+  float: right;
+}
 
 .lyric-container {
   width: 50%;
