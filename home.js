@@ -5,10 +5,10 @@ const song = $('#song');
 const addSong = $('#add-title');
 
 $(document).ready(() => {
+
   const state = {
     playlist: []
   };
-
   //$("#listOfSongs").hide();
 
   $("#add-title").click(()=>{
@@ -21,7 +21,7 @@ $(document).ready(() => {
     $(".lineInTheList").append(button);
     state.playlist.push(artist, title);
     localStorage.setItem('playlist', JSON.stringify(state.playlist));
-  })
+  });
 
 
   $("#getLyrics").click(getLyrics);
@@ -30,7 +30,7 @@ $(document).ready(() => {
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .done((res) => {
       let reply = JSON.parse(res);
-    })
+    });
     //let elem = $(`<li>${artist}-${title}<button id="getLyrics"></button></li>`);
     //$(".listOfSongs").append(elem);
     //$(".listOfSongs").show();

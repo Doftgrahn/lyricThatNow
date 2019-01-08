@@ -14,9 +14,9 @@ main h1 {
   font-size: 40px;
   position: absolute;
   z-index: 1;
-  top: 160px;
-  left: 420px;
-  margin:auto;
+  top: 170px;
+  left: 590px;
+  margin: auto;
   transform: rotate(-90deg);
   color: #d9868a;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -25,12 +25,14 @@ main h1 {
   justify-content: center;
   text-align: center;
 }
+
 @media(max-width:600px) {
   main h1 {
     position: absolute;
-    top:140px;
-    left:47px;
+    top: 140px;
+    left: 47px;
   }
+
   input {
     font-size: 16px;
   }
@@ -103,10 +105,10 @@ label {
 }
 
 .bottom-arrow {
-   /* border-bottom: 3px solid #ea6169;   */
+  /* border-bottom: 3px solid #ea6169;  */
 }
 
-.bottom-arrow:after {
+.bottom-arrow::after {
   position: absolute;
   right: 0;
   left: 0;
@@ -138,6 +140,7 @@ label {
   padding: 20px;
   border: inset 1px solid black;
   border-radius: 20px;
+  color: #fffafa;
 }
 
 #output-list {
