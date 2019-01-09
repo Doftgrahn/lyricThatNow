@@ -1,3 +1,12 @@
+#output-list .getLyrics {
+  position: relative;
+  float:right;
+  font-size:17px;
+  height:50px;
+  padding:5px;
+  margin-left: 640px;
+
+}
 
 .btn {
     line-height: 50px;
@@ -8,7 +17,6 @@
     border:1px solid #5a142a;
     background-color: #5a142a;
     /* background-image: linear-gradient(#140a25, #5a142a); */
-
 }
 
 .btn-one {
