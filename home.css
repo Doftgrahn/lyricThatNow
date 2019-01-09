@@ -145,6 +145,7 @@ label {
 
 #output-list {
   list-style-type: none;
+  
 }
 
 .lyric-container {
@@ -169,7 +170,7 @@ footer {
   height: 100px;
   margin: 30px;
   padding: 50px;
-  border-top: :4px solid black;
+  border-top: 4px solid black;
 }
 
 #back-to-top {
