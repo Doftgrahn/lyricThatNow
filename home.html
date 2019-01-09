@@ -5,14 +5,17 @@
   <meta charset="utf-8">
   <title>Agile Group</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="home.js"></script>
+  <script src="addLyrics.js"></script>
   <script src="footer.js"></script>
+  <script src="addsong.js"></script>
+
   <link rel="stylesheet" type="text/css" href="button.css">
   <link rel="stylesheet" type="text/css" href="home.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
+
 <body>
   <main>
     <h1> MusicThatShajt </h1>
@@ -23,17 +26,23 @@
         Write the information that you want to get.
       </p>
     </div> -->
-
+    <div class="show-music-video">
+      <h2>Search for a song...</h2>
+      <label for="inputMusic1">Artist</label>
+      <input type="text" id="inputMusic1" placeholder="Artist">
+      <label for="inputMusic2">Title</label>
+      <input type="text" id="inputMusic2" placeholder="Title">
+      <button id="music" class="btn-one btn">Search</button>
+    </div>
     <img src="högtalare.png" alt="bild" id="speakerPic">
   </main>
   <div class="title-artist-button">
     <label for="artist">Artist</label>
-    <input type="text" id="artist" class="input-music" placeholder="Artist"><br>
+    <input type="text" id="artist" class="input-music" placeholder="Artist">
     <label for="title">Title</label>
-    <input type="text" id="title" class="input-music" placeholder="Title"><br>
-    <button id="add-title" class="btn-one btn" >Add to list</button>
+    <input type="text" id="title" class="input-music" placeholder="Title">
+    <button class="btn-one btn" id="add-title">Add to list</button>
   </div>
-
   </div>
 
   <div class="bottom-arrow"></div>
@@ -45,40 +54,8 @@
       </ul>
     </div>
     <div class="lyric-container">
-      <p id="output-lyrics">
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum enim et ipsum sodales, sit amet interdum orci eleifend. Curabitur justo justo, faucibus et diam vel, auctor mollis massa. Suspendisse dapibus aliquet nunc in vulputate.
-        Fusce aliquet lacus vel commodo iaculis. Maecenas eu dignissim tellus. Etiam lectus metus, malesuada et nunc ac, bibendum pellentesque risus. Praesent id aliquam dui. Praesent suscipit faucibus quam, eget vehicula quam. Fusce tempor, dui a
-        aliquet eleifend, odio lectus posuere turpis, et efficitur lorem urna vel justo. Aliquam erat volutpat. Proin blandit at quam ac consequat. In eu congue libero, sit amet sodales arcu.
-
-        Nullam convallis ornare tristique. Suspendisse in sodales nisl. Aenean tincidunt eleifend lectus, ornare mollis dui ullamcorper id. Nam vulputate tellus eget lectus dictum iaculis. Integer at magna nec libero efficitur volutpat quis sed
-        dolor. Fusce iaculis, sem id malesuada lobortis, nulla urna efficitur ex, nec luctus metus magna non massa. Vivamus nec commodo diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed pharetra nisl in quam efficitur
-        facilisis. Vestibulum faucibus rutrum laoreet. Aenean feugiat tellus in iaculis fringilla. Duis congue tincidunt erat at aliquam. Phasellus consequat est id arcu ultrices pharetra. Phasellus venenatis tincidunt mattis. Cras sed ultricies
-        justo.
-
-        Vivamus consequat, dolor euismod blandit pretium, ante sapien condimentum velit, vel porta diam justo convallis magna. Morbi lacus ipsum, vehicula sed bibendum non, ultrices suscipit nulla. Sed eget felis at lorem rutrum sodales et ac purus.
-        Etiam et finibus enim. Mauris justo purus, convallis a malesuada a, volutpat sed nisl. Nunc at tempor justo. Proin tristique placerat quam. Etiam egestas ante augue, vel fermentum nisi venenatis eu. Donec faucibus ipsum at arcu euismod
-        scelerisque. Nam eu pulvinar ante. Morbi non orci ut libero pretium lobortis. Praesent tincidunt, tellus non malesuada rutrum, velit ex finibus leo, at tincidunt justo metus at purus. Curabitur et risus sollicitudin, condimentum nisl
-        euismod, fermentum orci. Integer porta finibus ipsum, eget accumsan tellus volutpat sed. Duis id aliquam lectus.
-
-        Suspendisse posuere at justo ac eleifend. Sed viverra suscipit ex non vestibulum. Proin ornare nibh turpis, vel vestibulum massa gravida sit amet. Phasellus hendrerit metus id dolor tincidunt, nec convallis turpis scelerisque. Nunc gravida
-        id nulla quis fermentum. Nunc sodales neque eu nulla aliquam vestibulum. Nunc vel euismod lacus. Proin condimentum rhoncus cursus. Duis posuere tempor ante et facilisis.
-
-        Suspendisse ut urna rutrum, volutpat urna in, luctus est. Curabitur viverra odio urna, id sodales velit vestibulum id. Praesent placerat tellus ut felis tristique congue. Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Nam elementum justo nec eros semper mollis. Integer tristique dui commodo, blandit ipsum vitae, imperdiet erat. In lacinia at lacus et feugiat. Praesent in rhoncus purus. Ut ac posuere felis, non tempor risus. Morbi
-        ut vehicula risus, sed pretium eros. Integer et justo in tellus maximus porta. Vestibulum ac ante id orci facilisis consequat. Nunc consequat porta nibh, sit amet tristique purus dignissim in. Nulla purus leo, fermentum eu purus ut, blandit
-        rhoncus ipsum.
-
-        Integer sed magna at nisi imperdiet pellentesque. Vivamus sodales mollis nisl ornare semper. Donec commodo tempus justo in finibus. Cras venenatis felis ipsum, nec porta lectus sodales vitae. Duis bibendum facilisis augue vitae egestas.
-        Nullam sem tortor, aliquam eget nibh at, vestibulum maximus elit. Mauris sit amet sapien at massa commodo placerat. Integer eget elementum neque. Mauris eget rutrum augue. Duis volutpat dignissim ex, eget interdum magna tempor sed.
-
-        In semper euismod rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget sapien sed purus molestie molestie. Phasellus enim mi, venenatis id tellus dapibus, ullamcorper aliquet felis. Nullam auctor urna vitae
-        euismod porta. Nulla sit amet urna non lectus pretium vulputate. Nam dapibus augue sed dignissim blandit. Praesent sit amet finibus eros. Integer nec mollis odio. Aliquam arcu nibh, interdum a sollicitudin at, tincidunt quis leo. Duis mattis
-        nisl sit amet augue mattis, nec rhoncus orci feugiat.
-
-        Nam a nibh blandit tortor pharetra ultricies vel eget neque. Integer sollicitudin vehicula sollicitudin. Sed vitae velit ut sem mattis fringilla vitae ut augue. Phasellus ut est orci. Vivamus lectus arcu, malesuada in ultricies at, ultricies
-        nec lorem. Duis rutrum sem vitae sem ultricies, in rutrum metus condimentum. Maecenas maximus aliquet justo. Sed condimentum pretium lectus, non rutrum mauris faucibus vitae.
-      </p>
+      <!-- <p id="output-lyrics">
+      </p> -->
     </div>
   </div>
   <!-- <div class="bottom-arrow"></div> -->
