@@ -147,9 +147,7 @@ main {
   color: white;
 }
 
-.delete>* {
-  padding: 20px;
-}
+
 
 .input-music {
   margin: 10px;
@@ -161,12 +159,13 @@ main {
 }
 
 .line {
-  display: flex;
-  flex-direction: column;
+/*  display: flex;
+*/
 }
 
-.delete {
-  margin-left: 500px;
+.delete, .getLyrics {
+   float:right;
+   display: inline-block;
 }
 
 .input-music::placeholder {
@@ -223,8 +222,8 @@ label {
 }
 
 .getLyrics {
-  float: right;
-  margin-left: 400px;
+  /* float: right; */
+  /* margin-left: 400px; */
 }
 
 .lyric-container {
