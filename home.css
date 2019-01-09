@@ -110,7 +110,7 @@ label {
 
 
 .bottom-arrow {
-  /* border-bottom: 3px solid #ea6169;   */
+   /* border-bottom: 3px solid #ea6169;    */
 }
 
 .bottom-arrow::after {
@@ -131,6 +131,7 @@ label {
   flex-wrap: wrap;
   height: 300px;
   margin: 22px;
+  border-bottom: 5px solid #ea6169;
 }
 
 .output {
@@ -177,7 +178,7 @@ footer {
   height: 100px;
   margin: 30px;
   padding: 50px;
-  border-top: :4px solid black;
+  border-top: :4px solid white;
 }
 
 #back-to-top {

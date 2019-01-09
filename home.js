@@ -1,8 +1,12 @@
-const artist = $('#artist');
-const song = $('#song');
-const addSong = $('#add-title');
 
 $(document).ready(() => {
+
+  const artist = $('#artist');
+  const song = $('#title');
+  const addSong = $('#add-title');
+
+  console.log(`Vad läggs in här? ${song.val()} `);
+
 
   const state = {
     playlist: []
@@ -26,7 +30,7 @@ $(document).ready(() => {
     let title = $('#title').val();
     let button = $('<button>Get the lyrics</button>');
     button.click( () => getLyrics(artist, title) );
-    $("#output-list").append(`<li class="line">` + artist + ` - ` + title + `<button class="getLyrics">Get the lyrics</button>` + `</li>`);// + '<button id="getLyrics">Get the lyrics</button>');
+    $("#output-list").append(`<li class="line">${artist} - ${title} <button class="btn btn-one getLyrics" data-id="artist.val">Get the lyrics</button></li>`);// + '<button id="getLyrics">Get the lyrics</button>');
     //$("#output-list").append(button);
     state.playlist.push({ artist: artist, title: title });
     localStorage.setItem('playlist', JSON.stringify(state.playlist));
@@ -36,7 +40,7 @@ $(document).ready(() => {
   $("#getLyrics").click(getLyrics);
   function getLyrics (artist, title) {
     console.log("button get lyrics was clicked");
-    $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+    $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}New%20item=`)
     .done((res) => {
       let reply = JSON.parse(res);
     });
