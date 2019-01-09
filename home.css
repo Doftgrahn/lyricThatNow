@@ -129,8 +129,9 @@ label {
 .music-output {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  /* height: 300px; */
   margin: 22px;
+  transition: 0.5 ease;
 }
 
 .output {
@@ -140,7 +141,7 @@ label {
 
 #output-list {
   overflow: scroll;
-  height: 280px;
+  /* height: 280px; */
   margin: 20px;
   padding: 20px;
   border: inset 1px solid black;
@@ -153,21 +154,28 @@ label {
 }
 .getLyrics {
   float: right;
+  margin-left:400px;
 }
 
 .lyric-container {
   width: 50%;
   border-left: 1px solid #ea6169;
+  height:auto;
 }
 
 #output-lyrics {
-  overflow: scroll;
+   overflow: scroll;
   height: 280px;
   margin: 20px;
   padding: 20px;
   color: #fffafa;
   border: inset 1px solid black;
   border-radius: 20px;
+}
+pre {
+  color:#fffafa;
+  padding:20px;
+  margin:20px;
 }
 
 footer {

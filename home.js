@@ -34,9 +34,9 @@ $(document).ready(() => {
 
   function appendSong (song) {
     //let button = $('<button>Get the lyrics</button>');
-    let li = $('<li class="line">' + song.artist + ' - ' + song.title + '<button class="getLyrics">Get the lyrics</button>' + '</li>');
+    let li = $('<li class="line">' + song.artist + ' - ' + song.title + '<button class="getLyrics btn btn-one">Get the lyrics</button>' + '</li>');
     let button = li.find('button');
-    $('#output-list').append(li);
+    $('#output-list').append(li).fadeIn('fast');
 
     button.click(() => {
       console.log(song.artist, song.title);
