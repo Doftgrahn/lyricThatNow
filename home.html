@@ -13,6 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
+
 <body>
   <main>
     <h1> MusicThatShajt </h1>
@@ -23,17 +24,23 @@
         Write the information that you want to get.
       </p>
     </div> -->
-
+    <div class="show-music-video">
+      <h2>Search for a song...</h2>
+      <label for="inputMusic1">Artist</label>
+      <input type="text" id="inputMusic1" placeholder="Artist">
+      <label for="inputMusic2">Title</label>
+      <input type="text" id="inputMusic2" placeholder="Title">
+      <button id="music" class="btn-one btn">Search</button>
+    </div>
     <img src="högtalare.png" alt="bild" id="speakerPic">
   </main>
   <div class="title-artist-button">
     <label for="artist">Artist</label>
-    <input type="text" id="artist" class="input-music" placeholder="Artist"><br>
+    <input type="text" id="artist" class="input-music" placeholder="Artist">
     <label for="title">Title</label>
-    <input type="text" id="title" class="input-music" placeholder="Title"><br>
+    <input type="text" id="title" class="input-music" placeholder="Title">
     <button class="btn-one btn" id="add-title">Add to list</button>
   </div>
-
   </div>
 
   <div class="bottom-arrow"></div>
@@ -45,8 +52,8 @@
       </ul>
     </div>
     <div class="lyric-container">
-      <p id="output-lyrics">
-      </p>
+      <!-- <p id="output-lyrics">
+      </p> -->
     </div>
   </div>
 
