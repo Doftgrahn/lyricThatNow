@@ -56,10 +56,11 @@ $(document).ready(() => {
     })
 
     deleteButton.on('click', event => {
-      let newPlaylist = state.playlist.filter(s => s.artist !== song.artist && song.title !== s.title);
+      let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
       console.log(`Funkar newplaylist?`, newPlaylist);
-      localStorage.removeItem('playlist');
-      li.remove();
+      localStorage.setItem('playlist', JSON.stringify(newPlaylist));
+      state.playlist =newPlaylist;
+      li.fadeOut('fast');
 
     });
   };
