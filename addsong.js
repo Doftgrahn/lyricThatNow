@@ -8,18 +8,7 @@ let settings;
 
 musicButton.on('click', event => {
 
-
-  
-
-
-
-
-
 });
-
-
-
-
 
 
 });
