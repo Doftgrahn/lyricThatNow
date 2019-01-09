@@ -210,6 +210,7 @@ label {
 
 #output-list {
   list-style-type: none;
+  
 }
 
 .getLyrics {
@@ -247,7 +248,7 @@ footer {
   height: 100px;
   margin: 30px;
   padding: 50px;
-  border-top: :4px solid white;
+  border-top: 4px solid black;
 }
 
 #back-to-top {
