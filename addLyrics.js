@@ -71,12 +71,32 @@ $(document).ready(() => {
   function getLyrics(artist, title) {
     console.log("button get lyrics was clicked");
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
-    .done((res) => {
-      let reply = res.lyrics;
-      $(".lyric-container").html('<pre>' + reply + '</pre>');
-    })
-    .fail((res) => {
-      $(".lyric-container").html('<div class="errorMessage">' + "Ooops, no lyrics found" + '</div>');
-    })
-  }
+      .done((res) => {
+        let crossDiv = '<button class="crossDelete">x</button>';
+        let reply = res.lyrics;
+        $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).fadeIn('slow');
+        $(".errorMessage").fadeOut('fast', message => {
+          $(this).remove();
+        })
+
+        const cross = $('.crossDelete');
+        cross.on('click', remove => {
+          $(".lyric-container").fadeOut('slow', takeAway => {
+            $(this).remove();
+
+          })
+          console.log('funkar det?', cross);
+
+        });
+      })
+      .fail((res) => {
+        $(".errorMessage").html('<p>Ooops, no lyrics found</p>').fadeIn('fast');
+      })
+  };
+
+
+
+
+
+
 });

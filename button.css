@@ -1,69 +1,98 @@
-#output-list .getLyrics {
-  /* position: relative; */
-  /* float:right; */
-  /* font-size:17px; */
-  /* height:50px; */
-  /* padding:5px; */
-  /* margin-left: 640px; */
-
+#output-list .getLyrics
+{
+    /* position: relative; */
+    /* float:right; */
+    /* font-size:17px; */
+    /* height:50px; */
+    /* padding:5px; */
+    /* margin-left: 640px; */
 }
 
-.btn {
+.btn
+{
     line-height: 50px;
-    height: 50px;
-    text-align: center;
+
     width: 150px;
+    height: 50px;
+
     cursor: pointer;
-    border:1px solid #5a142a;
+    text-align: center;
+
+    border: 1px solid #5a142a;
+    outline: none;
     background-color: #5a142a;
     /* background-image: linear-gradient(#140a25, #5a142a); */
 }
 
-.btn-one {
-    color: #fffafa;
-    transition: all 0.3s;
+.btn-one
+{
     position: relative;
+
+    transition: all .3s;
+
+    color: #fffafa;
+    outline: none;
 }
-.btn-one span {
-    transition: all 0.3s;
+
+.btn-one span
+{
+    transition: all .3s;
 }
-.btn-one::before {
-    content: '';
+
+.btn-one::before
+{
     position: absolute;
+    z-index: 1;
     bottom: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    z-index: 1;
+
+    content: '';
+    transition: all .3s;
+    transform: scale(.1, 1);
+
     opacity: 0;
-    transition: all 0.3s;
     border-top-width: 1px;
-    border-bottom-width: 1px;
     border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, .5);
+    border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-top-color: rgba(255,255,255,0.5);
-    border-bottom-color: rgba(255,255,255,0.5);
-    transform: scale(0.1, 1);
+    border-bottom-color: rgba(255, 255, 255, .5);
 }
-.btn-one:hover span {
+
+.btn-one:hover span
+{
     letter-spacing: 2px;
 }
-.btn-one:hover::before {
-    opacity: 1;
+
+.btn-one:hover::before
+{
     transform: scale(1, 1);
+
+    opacity: 1;
 }
-.btn-one::after {
-    content: '';
+
+.btn-one::after
+{
     position: absolute;
+    z-index: 1;
     bottom: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    z-index: 1;
-    transition: all 0.3s;
-    background-color: rgba(255,255,255,0.1);
+
+    content: '';
+    transition: all .3s;
+
+    background-color: rgba(255, 255, 255, .1);
 }
-.btn-one:hover::after {
+
+.btn-one:hover::after
+{
+    transform: scale(.1, 1);
+
     opacity: 0;
-    transform: scale(0.1, 1);
 }
