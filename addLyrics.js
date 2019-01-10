@@ -22,7 +22,7 @@ $(document).ready(() => {
   // $("#listOfSongs").hide();
 
   $("#add-title").click(() => {
-    console.log("button add song was clicked");
+    // console.log("button add song was clicked");
     let artist = $('#artist').val();
     let title = $('#title').val();
     appendSong({
@@ -48,8 +48,6 @@ $(document).ready(() => {
     let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
     li.append(getButton);
     li.append(deleteButton);
-
-
     $('#output-list').hide().append(li).fadeIn('fast');
 
     getButton.click(() => {
@@ -59,13 +57,12 @@ $(document).ready(() => {
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
-      console.log(`Funkar newplaylist?`, newPlaylist);
+      // console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
       $(".errorMessage").fadeOut('fast', message => {
         $(this).remove();
       });
-
       li.fadeOut('fast', deleteIt => {
         $(this).remove();
       });
