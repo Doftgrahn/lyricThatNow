@@ -1,3 +1,7 @@
+html {
+  background-color:#140a25;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
@@ -98,7 +102,7 @@ main h1 {
   .music-output {
    flex-direction: column;
    justify-content:center;
-   
+
   }
   .output, li  {
     font-size: 10px;
