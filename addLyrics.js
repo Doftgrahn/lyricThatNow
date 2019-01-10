@@ -36,6 +36,8 @@ $(document).ready(() => {
       title: title
     }); //old version
     localStorage.setItem('playlist', JSON.stringify(state.playlist));
+    $('#artist').val('');
+    $('#title').val('');
   });
 
   function appendSong(song) {
@@ -48,7 +50,7 @@ $(document).ready(() => {
     li.append(deleteButton);
 
 
-    $('#output-list').append(li);
+    $('#output-list').hide().append(li).fadeIn('fast');
 
     getButton.click(() => {
       console.log(song.artist, song.title);
@@ -64,7 +66,6 @@ $(document).ready(() => {
         $(this).remove();
       });
     });
-
   };
 
   function getLyrics(artist, title) {
