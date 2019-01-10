@@ -41,7 +41,7 @@ $(document).ready(() => {
   function appendSong(song) {
 
     //let button = $('<button>Get the lyrics</button>');
-    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton">delete</button>')
+    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton">Delete</button>')
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
     let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
     li.append(getButton);
@@ -60,9 +60,11 @@ $(document).ready(() => {
       console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
-      li.fadeOut('fast');
-
+      li.fadeOut('fast', deleteIt => {
+        $(this).remove();
+      });
     });
+
   };
 
   function getLyrics(artist, title) {
