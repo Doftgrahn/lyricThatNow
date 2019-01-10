@@ -8,11 +8,12 @@
   <script src="addLyrics.js"></script>
   <script src="footer.js"></script>
   <script src="addsong.js"></script>
+  <script src="deleteCross.js"></script>
+
   <link rel="stylesheet" type="text/css" href="button.css">
   <link rel="stylesheet" type="text/css" href="home.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         Write the information that you want to get.
       </p>
     </div> -->
-    
+
     <div class="show-music-video">
       <h2>Search for a song...</h2>
       <label for="inputMusic1">Artist</label>
@@ -47,30 +48,26 @@
   
 
   </div>
-  </div>
-
+  <!-- </div> -->
   <div class="bottom-arrow"></div>
-
   <div class="music-output">
+    <div class="errorMessage"></div>
+
     <div class="output">
       <ul id="output-list">
-        <li></li>
+        <!-- <li></li> -->
       </ul>
     </div>
     <div class="lyric-container">
+
       <!-- <p id="output-lyrics">
       </p> -->
     </div>
   </div>
   <!-- <div class="bottom-arrow"></div> -->
-
-
   <footer>
-
     <button id="back-to-top" class="btn btn-one">Back to Top</button>
   </footer>
-
-
 </body>
 
 </html>
