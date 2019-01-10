@@ -62,6 +62,10 @@ $(document).ready(() => {
       console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
+      $(".errorMessage").fadeOut('fast', message => {
+        $(this).remove();
+      });
+
       li.fadeOut('fast', deleteIt => {
         $(this).remove();
       });
@@ -77,15 +81,14 @@ $(document).ready(() => {
         $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).fadeIn('slow');
         $(".errorMessage").fadeOut('fast', message => {
           $(this).remove();
-        })
+        });
 
         const cross = $('.crossDelete');
         cross.on('click', remove => {
           $(".lyric-container").fadeOut('slow', takeAway => {
             $(this).remove();
 
-          })
-          console.log('funkar det?', cross);
+          });
 
         });
       })

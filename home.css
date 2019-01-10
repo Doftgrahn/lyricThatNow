@@ -280,6 +280,10 @@ label {
   height: 200px;
   color: #fffafa;
 }
+.crossDelete::after {
+  content: '';
+  ;
+}
 
 .crossDelete:hover {
   color: #d9868a;
