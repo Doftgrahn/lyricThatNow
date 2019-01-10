@@ -67,12 +67,13 @@ $(document).ready(() => {
 
   function getLyrics(artist, title) {
     console.log("button get lyrics was clicked");
-
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
-      .done((res) => {
-        let reply = res.lyrics;
-        console.log(res);
-        $(".lyric-container").html('<pre>' + reply + '</pre>');
-      });
+    .done((res) => {
+      let reply = res.lyrics;
+      $(".lyric-container").html('<pre>' + reply + '</pre>');
+    })
+    .fail((res) => {
+      $(".lyric-container").html('<div class="errorMessage">' + "Ooops, no lyrics found" + '</div>');
+    })
   }
 });
