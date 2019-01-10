@@ -131,7 +131,7 @@ main {
   position: relative;
   top: 20px;
   width: 300px;
-  /* left: 40%; */
+   /* left: 40%;  */
   height: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -143,11 +143,9 @@ main {
   flex-direction: column;
   padding: 30px;
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   color: white;
 }
-
-
 
 .input-music {
   margin: 10px;
@@ -159,13 +157,29 @@ main {
 }
 
 .line {
-/*  display: flex;
-*/
+
+}
+
+.line::after {
+  content: '';
+  clear: both;
+  display: table;
+
 }
 
 .delete, .getLyrics {
-   float:right;
-   display: inline-block;
+  font-size: 18px;
+  margin: 0 auto;
+  float: right;
+  transition: 1s ease;
+  letter-spacing: 1px;
+  justify-content: center;
+}
+
+.delete:after, .getLyrics::after {
+  content: '';
+  text-align: center;
+
 }
 
 .input-music::placeholder {
@@ -247,6 +261,12 @@ pre {
   padding: 20px;
   white-space: pre;
   color: #fffafa;
+}
+
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  
 }
 
 footer {

@@ -36,19 +36,21 @@ $(document).ready(() => {
       title: title
     }); //old version
     localStorage.setItem('playlist', JSON.stringify(state.playlist));
+    $('#artist').val('');
+    $('#title').val('');
   });
 
   function appendSong(song) {
 
     //let button = $('<button>Get the lyrics</button>');
-    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton">delete</button>')
+    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton">Delete</button>')
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
     let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
     li.append(getButton);
     li.append(deleteButton);
 
 
-    $('#output-list').append(li);
+    $('#output-list').hide().append(li).fadeIn('fast');
 
     getButton.click(() => {
       console.log(song.artist, song.title);
@@ -60,8 +62,9 @@ $(document).ready(() => {
       console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
-      li.fadeOut('fast');
-
+      li.fadeOut('fast', deleteIt => {
+        $(this).remove();
+      });
     });
   };
 
