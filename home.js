@@ -9,6 +9,7 @@ $(document).ready(() => {
   };
 
 
+
   let playlist = localStorage.getItem('playlist');
   // console.log('playlist är: ', typeof playlist, playlist);
   if( playlist !== null ) {

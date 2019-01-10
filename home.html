@@ -11,6 +11,8 @@
   <link rel="stylesheet" type="text/css" href="home.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://music.yandex.ru/api/audio/dist/index.js"></script>
+  <script src="https://music.yandex.ru/api/audio/dist/index.map.json"></script>
 
 </head>
 <body>
@@ -18,43 +20,44 @@
     <h1> MusicThatShajt </h1>
 
     <!-- <div class="playlist-text">
-      <h2>Create playlist</h2>
-      <p>
-        Write the information that you want to get.
-      </p>
-    </div> -->
+    <h2>Create playlist</h2>
+    <p>
+    Write the information that you want to get.
+  </p>
+</div> -->
 
-    <img src="högtalare.png" alt="bild" id="speakerPic">
-  </main>
-  <div class="title-artist-button">
-    <label for="artist">Artist</label>
-    <input type="text" id="artist" class="input-music" placeholder="Artist"><br>
-    <label for="title">Title</label>
-    <input type="text" id="title" class="input-music" placeholder="Title"><br>
-    <button class="btn-one btn" id="add-title">Add to list</button>
+<img src="högtalare.png" alt="bild" id="speakerPic">
+</main>
+<div class="title-artist-button">
+  <label for="artist">Artist</label>
+  <input type="text" id="artist" class="input-music" placeholder="Artist"><br>
+  <label for="title">Title</label>
+  <input type="text" id="title" class="input-music" placeholder="Title"><br>
+  <button class="btn-one btn" id="add-title">Add to list</button>
+</div>
+
+</div>
+
+
+<div class="bottom-arrow"></div>
+
+<div class="music-output">
+  <div class="output">
+    <ul id="output-list">
+      <li></li>
+    </ul>
   </div>
-
+  <div class="lyric-container">
+    <p id="output-lyrics">
+    </p>
   </div>
+</div>
 
+<footer>
   <div class="bottom-arrow"></div>
 
-  <div class="music-output">
-    <div class="output">
-      <ul id="output-list">
-        <li></li>
-      </ul>
-    </div>
-    <div class="lyric-container">
-      <p id="output-lyrics">
-      </p>
-    </div>
-  </div>
-
-  <footer>
-    <div class="bottom-arrow"></div>
-
-    <button id="back-to-top" class="btn btn-one">Back to Top</button>
-  </footer>
+  <button id="back-to-top" class="btn btn-one">Back to Top</button>
+</footer>
 
 
 
