@@ -44,8 +44,9 @@ $(document).ready(() => {
     let deleteButton = $('<button class="delete btn btn-one" id="deleteButton">delete</button>')
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
     let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
-    li.append(deleteButton);
     li.append(getButton);
+    li.append(deleteButton);
+
 
     $('#output-list').append(li);
 
