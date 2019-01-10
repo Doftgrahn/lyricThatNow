@@ -298,8 +298,8 @@ pre {
 
 .errorMessage {
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 80%;
+  left: 60%;
   display: flex;
   display: none;
   align-items: center;
