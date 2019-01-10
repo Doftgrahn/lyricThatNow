@@ -1,5 +1,5 @@
 html {
-  background-color:#140a25;
+  background-color: #140a25;
 }
 
 * {
@@ -13,13 +13,14 @@ body {
   border: 1px solid black;
   background-image: linear-gradient(#140a25, #5a142a);
 }
+
 main {
   display: flex;
 }
 
 main h1 {
   font-size: 40px;
-   position: relative;
+  position: relative;
   z-index: 1;
   top: 190px;
   right: 160px;
@@ -73,8 +74,8 @@ main h1 {
   color: #fffafa;
   border: 1px solid #ea6169;
   border-radius: 10px;
+  outline: none;
   background-color: #d9868a;
-  outline:none;
 }
 
 .show-music-video>input::placeholder {
@@ -93,33 +94,38 @@ main h1 {
 
 @media(max-width:600px) {
   main h1 {
-    left:0px;
+    left: 0;
   }
 
   input {
     font-size: 16px;
   }
-  .music-output {
-   flex-direction: column;
-   justify-content:center;
 
+  .music-output {
+    flex-direction: column;
+    justify-content: center;
   }
-  .output, li  {
+
+  .output,
+  li {
     font-size: 10px;
     /* width:100%; */
   }
+
   .output li button {
-    font-size:10px;
-    width:70px;
-    padding:0;
-    margin:0;
+    font-size: 10px;
+    width: 70px;
+    margin: 0;
+    padding: 0;
   }
+
   .lyric-container {
+    font-size: 5px;
     /* width:100%; */
     max-width: 100%;
-    font-size:5px;
     white-space: pre-wrap;
   }
+
   .lyric-container pre {
     font-size: 12px;
   }

@@ -8,7 +8,6 @@ $(document).ready(() => {
     playlist: []
   };
 
-
   let playlist = localStorage.getItem('playlist');
   // console.log('playlist är: ', typeof playlist, playlist);
   if (playlist !== null) {
@@ -70,7 +69,7 @@ $(document).ready(() => {
   };
 
   function getLyrics(artist, title) {
-    console.log("button get lyrics was clicked");
+    // console.log("button get lyrics was clicked");
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
       .done((res) => {
         let crossDiv = '<button class="crossDelete">x</button>';
@@ -84,9 +83,7 @@ $(document).ready(() => {
         cross.on('click', remove => {
           $(".lyric-container").fadeOut('slow', takeAway => {
             $(this).remove();
-
           });
-
         });
       })
       .fail((res) => {
@@ -94,10 +91,4 @@ $(document).ready(() => {
       })
   };
 
-
-
-
-
-
 });
-
