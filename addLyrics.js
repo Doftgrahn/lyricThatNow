@@ -47,7 +47,7 @@ $(document).ready(() => {
     let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
     li.append(getButton);
     li.append(deleteButton);
-    $('#output-list').hide().append(li).fadeIn('fast');
+    $('#output-list').hide().append(li).slideDown('fast');
 
     getButton.click(() => {
       console.log(song.artist, song.title);
@@ -59,10 +59,10 @@ $(document).ready(() => {
       // console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
-      $(".errorMessage").fadeOut('fast', message => {
+      $(".errorMessage").slideUp('slow', message => {
         $(this).remove();
       });
-      li.fadeOut('fast', deleteIt => {
+      li.slideUp('fast', deleteIt => {
         $(this).remove();
       });
     });
@@ -74,14 +74,14 @@ $(document).ready(() => {
       .done((res) => {
         let crossDiv = '<button class="crossDelete">x</button>';
         let reply = res.lyrics;
-        $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).fadeIn('slow');
-        $(".errorMessage").fadeOut('fast', message => {
+        $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).slideDown(800);
+        $(".errorMessage").slideUp('slow', message => {
           $(this).remove();
         });
 
         const cross = $('.crossDelete');
         cross.on('click', remove => {
-          $(".lyric-container").fadeOut('slow', takeAway => {
+          $(".lyric-container").slideUp(800, takeAway => {
             $(this).remove();
           });
         });
