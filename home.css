@@ -19,17 +19,19 @@ main {
 }
 
 main h1 {
-  font-size: 40px;
+  font-family: 'Bungee Inline', cursive;
+
+  font-size: 1.8em;
   position: relative;
   z-index: 1;
-  top: 190px;
+  top: 200px;
   right: 160px;
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: center; */
-  margin: auto;
+  margin: 0 auto;
   transform: rotate(-90deg);
-  text-align: center;
+  /* text-align: center; */
   color: #d9868a;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

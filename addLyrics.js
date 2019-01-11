@@ -87,7 +87,7 @@ $(document).ready(() => {
         });
       })
       .fail((res) => {
-        $(".errorMessage").html('<p>Ooops, no lyrics found</p>').fadeIn('fast');
+        $(".errorMessage").html('<p>Oops, no lyrics found...</p>').fadeIn('fast');
       })
   };
 
