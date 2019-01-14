@@ -1,7 +1,7 @@
 #output-list .getLyrics {
   /* position: relative; */
   /* float:right; */
-  /* font-size:17px; */
+   /* font-size:10px; */
   /* height:50px; */
   /* padding:5px; */
   /* margin-left: 640px; */
@@ -13,10 +13,11 @@
   height: 50px;
   cursor: pointer;
   text-align: center;
-  border: 1px solid #d9868a;
+  /* border: 1px solid #d9868a; */
   border-radius: 10px;
   outline: none;
-  background-color: #5a142a;
+   border:none;
+  background-color: #36deaf;
   /* background-image: linear-gradient(#140a25, #5a142a); */
 }
 
@@ -44,10 +45,10 @@
   opacity: 0;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: rgba(255, 255, 255, .5);
+  border-top-color: rgba(10, 200, 200, .5);
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, .5);
+  border-bottom-color: rgba(0, 200, 200, .5);
   border-radius: 10px;
 }
 
@@ -72,7 +73,8 @@
   content: '';
   transition: all .3s;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, .1);
+  /* background-color:#005d57; */
+  background-color: rgba(0,93,86, .2);
 }
 
 .btn-one:hover::after {
