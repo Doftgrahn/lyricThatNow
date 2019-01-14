@@ -19,6 +19,21 @@ $(document).ready(() => {
     })
   }
   // $("#listOfSongs").hide();
+  $("#artist").keyup(checkInput);
+  $("#title").keyup(checkInput);
+
+  function checkInput (){
+
+    if ($('#artist').val() && $('#title').val()){
+         $("#add-title").removeAttr('disabled');
+         console.log("button is enabled");
+    } else {
+          //false if value in input is null or empty or undefined
+      $("#add-title").attr('disabled', true);
+      console.log("button is disabled");
+    }
+
+  }
 
   $("#add-title").click(() => {
     // console.log("button add song was clicked");
@@ -37,17 +52,23 @@ $(document).ready(() => {
     localStorage.setItem('playlist', JSON.stringify(state.playlist));
     $('#artist').val('');
     $('#title').val('');
+    checkInput();
+
   });
 
   function appendSong(song) {
 
     //let button = $('<button>Get the lyrics</button>');
-    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton">Delete</button>')
+    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>')
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
-    let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
+    let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>')
+    let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
     li.append(getButton);
     li.append(deleteButton);
-    $('#output-list').hide().append(li).slideDown('fast');
+    li.append(editButton);
+
+
+    $('#output-list').hide().append(li).fadeIn('fast');
 
     getButton.click(() => {
       console.log(song.artist, song.title);
@@ -67,6 +88,12 @@ $(document).ready(() => {
       });
     });
   };
+
+
+/*  function editSong (artist, title){
+
+}*/
+
 
   function getLyrics(artist, title) {
     // console.log("button get lyrics was clicked");
