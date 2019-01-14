@@ -1,10 +1,11 @@
 const artist = $('#artist');
 const song = $('#song');
-const addSong = $('#add-title');
 let crossDiv = '<button class="crossDelete">x</button>';
 
 
 $(document).ready(() => {
+  const addSong = $('#add-title');
+
 
   const state = {
     playlist: []
@@ -19,7 +20,7 @@ $(document).ready(() => {
     })
   };
 
-  $("#add-title").click(() => {
+  addSong.click(() => {
     // console.log("button add song was clicked");
     let artist = $('#artist').val();
     let title = $('#title').val();
@@ -51,7 +52,7 @@ $(document).ready(() => {
     getButton.click(() => {
       console.log(song.artist, song.title);
       getLyrics(song.artist, song.title);
-    })
+    });
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
