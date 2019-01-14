@@ -1,72 +1,56 @@
+body {
+  background: #191919;
+  height: 800px;
+  font-family: 'Roboto', sans-serif;
+}
 
+#wrapper {
+  color: #36deaf;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  left: 32%;
+  right: 30%;
+  margin: 60px;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  letter-spacing: 4px;
+  font-size: 0.8em;
+}
 
-body{
-    background: #191919;
-    height: 800px;
-    font-family: 'Roboto', sans-serif;
-   
-}   
-    #wrapper{
-        color: #36deaf;
-        flex-direction: column;
-        position: absolute;
-        top: 15%;
-        left: 32%;
-        right: 30%;
-        margin: 60px;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        outline: none;
-        letter-spacing: 4px;
-        font-size: 0.8em;
-    }
-    h1 {
-        color: #ff6856;
-		font-weight: 800;
-		font-size: 1.5em;
-		text-transform: uppercase;
-		letter-spacing: 5px;
-		text-align: center;
-		padding-top: 30px;
-		padding-bottom: 10px;
-    }
-    input[type="email"], input[type="password"] {
-		width: 80%;
-		border: none;
-        border-radius: 10px;
-		padding: 10px;
-        background-color:  #005d57;
-        outline: none;
-       /* opacity: 0.6;
+h1 {
+  color: #ff6856;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+input[type="email"], input[type="password"] {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #005d57;
+  outline: none;
+  /* opacity: 0.6;
         cursor: not-allowed;*/
-        border: none;
-        color: #fffafa;
-        
-    }
-    #submit {
-        color: #fffafa;
-		position: relative;
-		margin-top: 15px;
-        font-size: 1em;
-        border-radius: 10px;
-        outline: none;
-        padding: 5px;
-        width: 30%;
-    
-	}
-    .sami-thumbnail-div img{
-        width: 25%;
-        
-    }
-    .sami{
-        background-color: #36deaf;
-        padding: 10px;
-        margin: 15px;
-        position: fixed;
-        right: 45%;
-        border-radius: 10px;
-        outline: none;
-    }
+  border: none;
+  color: #fffafa;
+}
 
-   
+#submit {
+  text-decoration: none;
+  font-size: 1.2em;
+  outline: none;
+  padding: 10px;
+}
+
+.sami-thumbnail-div img {
+  width: 25%;
+}
