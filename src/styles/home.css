@@ -27,7 +27,7 @@ main h1 {
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: center; */
-  margin:0 auto;
+  margin: 0 auto;
   transform: rotate(-90deg);
   /* text-align: center; */
   color: #ff6856;
@@ -183,20 +183,41 @@ main {
 }
 
 .input-music {
+  font-size: 16px;
+  padding: 12px;
   width: 160px;
   margin: 10px;
-  padding: 8px;
   color: #fffafa;
-  border:none;
+  border: none;
   border-radius: 10px;
   outline: none;
   background-color: #005d57;
 }
 
-.line::after {
-  display: table;
-  clear: both;
-  content: '';
+.line {
+  display: flex;
+  flex-direction: row;
+}
+
+.line>* {
+  flex-grow: 0;
+}
+
+.line> :first-child {
+  flex-grow: 1;
+  margin-left: auto;
+}
+
+.line> :nth-child(2) {
+  order: 4;
+}
+
+.line>:nth-child(3) {
+  order: 3;
+}
+
+.line>:nth-child(4) {
+  order: 2;
 }
 
 .delete,
@@ -208,8 +229,7 @@ main {
   transition: 0.2 ease;
   letter-spacing: 1px;
   outline: none;
- text-align: center;
-
+  text-align: center;
 }
 
 .delete:after,
@@ -218,10 +238,10 @@ main {
 }
 
 .getLyrics:focus {
-  letter-spacing: 2px;
-  border: 2px solid #d9868a;
+  /* letter-spacing: 2px; */
+  /* border: 2px solid #d9868a; */
   background-color: #140a25;
-  border: 1.7px solid #d9868a;
+  /* border: 1.7px solid #d9868a; */
 }
 
 .input-music::placeholder {
