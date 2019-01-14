@@ -61,7 +61,7 @@ $(document).ready(() => {
 
     //let button = $('<button>Get the lyrics</button>');
     let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>')
-    let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
+    let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
     let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>')
     let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
     li.append(getButton);
