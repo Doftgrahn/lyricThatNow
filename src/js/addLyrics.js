@@ -9,16 +9,13 @@ $(document).ready(() => {
   };
 
   let playlist = localStorage.getItem('playlist');
-  // console.log('playlist är: ', typeof playlist, playlist);
   if (playlist !== null) {
     state.playlist = JSON.parse(playlist);
     state.playlist.forEach(song => {
-      //console.log('Hittade sången:', song);
       appendSong(song);
       //$('#output-list').append('<li class="line">' + song.artist + ' - ' + song.title + '<button class="getLyrics">Get the lyrics</button>' + '</li>');
     })
   }
-  // $("#listOfSongs").hide();
 
   $("#add-title").click(() => {
     // console.log("button add song was clicked");
@@ -69,7 +66,6 @@ $(document).ready(() => {
   };
 
   function getLyrics(artist, title) {
-    // console.log("button get lyrics was clicked");
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
       .done((res) => {
         let crossDiv = '<button class="crossDelete">x</button>';
@@ -78,7 +74,6 @@ $(document).ready(() => {
         $(".errorMessage").slideUp('slow', message => {
           $(this).remove();
         });
-
         const cross = $('.crossDelete');
         cross.on('click', remove => {
           $(".lyric-container").slideUp(800, takeAway => {
@@ -90,5 +85,4 @@ $(document).ready(() => {
         $(".errorMessage").html('<p>Oops, no lyrics found...</p>').fadeIn('fast');
       })
   };
-
 });

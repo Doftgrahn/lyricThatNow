@@ -52,7 +52,7 @@ $(document).ready(() => {
       console.log(song.artist, song.title);
       getLyrics(song.artist, song.title);
     })
-  }
+  };
 
   function getLyrics(artist, title) {
     console.log("button get lyrics was clicked");
