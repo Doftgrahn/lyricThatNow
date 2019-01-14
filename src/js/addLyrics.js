@@ -1,9 +1,11 @@
 const artist = $('#artist');
 const song = $('#song');
+const addSong = $('#add-title');
 let crossDiv = '<button class="crossDelete">x</button>';
 
 
 $(document).ready(() => {
+
   const addSong = $('#add-title');
 
 
@@ -36,6 +38,7 @@ $(document).ready(() => {
 
   }
 
+  $("#add-title").click(() => {
   addSong.click(() => {
     // console.log("button add song was clicked");
     let artist = $('#artist').val();
@@ -61,6 +64,7 @@ $(document).ready(() => {
 
     //let button = $('<button>Get the lyrics</button>');
     let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>')
+    let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
     let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>')
     let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
@@ -73,7 +77,11 @@ $(document).ready(() => {
     getButton.click(() => {
       console.log(song.artist, song.title);
       getLyrics(song.artist, song.title);
+
+    })
+
     });
+
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
@@ -89,9 +97,29 @@ $(document).ready(() => {
   };
 
 
-/*  function editSong (artist, title){
 
-}*/
+  /*function editSong (artist, title){
+    let songInTheList = $(`.content-${song.artist, song.title}`);
+    //store info into variables
+    let artistElem = songInTheList.find('span.artist');
+    let titleElem = songInTheList.find('span.title');
+    //store current values into variables
+    let orgArtist = artistElem.text();
+    let orgTitle = titleElem.text();
+    //manipulate dom in order to create inputs for changing
+    artistElem.html(`<input value="${orgArtist}" type="text">`);
+    titleElem.html(`<input value="${orgTitle}" type="text">`);
+    //changing the button from edit to save, by hiding and adding new one
+    let saveButton = $('<button class="save btn btn-one"><i class="fas fa-save"></i></button>')
+    let editB = songInTheList.find(".edit");
+    //hide
+    editB.hide();
+    button.after(saveButton);
+    saveButton.click(()=> {
+      //call the function that stores new values from user input
+      appendSong(artistElem.find("input").val(), titleElem.find("input").val());
+    })
+  }*/
 
 
   function getLyrics(artist, title) {
