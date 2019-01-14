@@ -1,6 +1,8 @@
 const artist = $('#artist');
 const song = $('#song');
 const addSong = $('#add-title');
+let crossDiv = '<button class="crossDelete">x</button>';
+
 
 $(document).ready(() => {
 
@@ -15,7 +17,7 @@ $(document).ready(() => {
       appendSong(song);
       //$('#output-list').append('<li class="line">' + song.artist + ' - ' + song.title + '<button class="getLyrics">Get the lyrics</button>' + '</li>');
     })
-  }
+  };
 
   $("#add-title").click(() => {
     // console.log("button add song was clicked");
@@ -25,7 +27,7 @@ $(document).ready(() => {
       artist,
       title
     }); // es6 version
-    let button = $('<button>Get the lyrics</button>');
+    // let button = $('<button>Get the lyrics</button>');
     //$("#output-list").append(button);
     state.playlist.push({
       artist: artist,
@@ -44,7 +46,7 @@ $(document).ready(() => {
     let li = $('<li class="line">' + song.artist + ' - ' + song.title + '</li>');
     li.append(getButton);
     li.append(deleteButton);
-    $('#output-list').hide().append(li).slideDown('fast');
+    $('#output-list').hide().append(li).slideDown(800);
 
     getButton.click(() => {
       console.log(song.artist, song.title);
@@ -53,10 +55,9 @@ $(document).ready(() => {
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
-      // console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
-      $(".errorMessage").slideUp('slow', message => {
+      $(".errorMessage").slideUp(800, message => {
         $(this).remove();
       });
       li.slideUp('fast', deleteIt => {
@@ -68,10 +69,10 @@ $(document).ready(() => {
   function getLyrics(artist, title) {
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
       .done((res) => {
-        let crossDiv = '<button class="crossDelete">x</button>';
+        // let crossDiv = '<button class="crossDelete">x</button>';
         let reply = res.lyrics;
         $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).slideDown(800);
-        $(".errorMessage").slideUp('slow', message => {
+        $(".errorMessage").slideUp(800, message => {
           $(this).remove();
         });
         const cross = $('.crossDelete');
@@ -79,10 +80,11 @@ $(document).ready(() => {
           $(".lyric-container").slideUp(800, takeAway => {
             $(this).remove();
           });
+
         });
       })
       .fail((res) => {
-        $(".errorMessage").html('<p>Oops, no lyrics found...</p>').fadeIn('fast');
+        $(".errorMessage").html('<p>Oops, no lyrics found... Try again!</p>').fadeIn('fast');
       })
   };
 });

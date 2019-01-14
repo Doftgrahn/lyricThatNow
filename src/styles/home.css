@@ -183,9 +183,10 @@ main {
 }
 
 .input-music {
+  font-size: 10px;
+  padding:12px;
   width: 160px;
   margin: 10px;
-  padding: 8px;
   color: #fffafa;
   border:none;
   border-radius: 10px;
