@@ -4,7 +4,7 @@ html {
 
 * {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 13px;
   box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@ main {
 
 main h1 {
   font-family: 'Bungee Inline', cursive;
-  font-size: 1em;
+  font-size: 1.6em;
   position: relative;
   z-index: 1;
   top: 200px;
@@ -255,7 +255,7 @@ label {
   min-height: 300px;
   margin: 22px;
   transition: 0.5s ease;
-  border-bottom: 5px solid #ea6169;
+  border-bottom: 1.2px solid #ea6169;
 }
 
 .output {
