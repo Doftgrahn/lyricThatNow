@@ -64,24 +64,24 @@ $(document).ready(() => {
 
     //let button = $('<button>Get the lyrics</button>');
     let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>')
-    let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
     let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>')
     let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
     li.append(getButton);
     li.append(deleteButton);
-    $('#output-list').hide().append(li).slideDown(800);
     li.append(editButton);
-    $('#output-list').hide().append(li).fadeIn('fast');
+    $('#output-list').hide().append(li).slideDown(800);
+
 
     getButton.click(() => {
       console.log(song.artist, song.title);
       getLyrics(song.artist, song.title);
 
-    })
-
     });
 
+
+
+    };
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
@@ -94,7 +94,9 @@ $(document).ready(() => {
         $(this).remove();
       });
     });
-  };
+
+
+
 
 
 
@@ -144,3 +146,4 @@ $(document).ready(() => {
       })
   };
 });
+})
