@@ -3,15 +3,15 @@ const song = $('#song');
 const addSong = $('#add-title');
 let crossDiv = '<button class="crossDelete">x</button>';
 
+const state = {
+  playlist: []
+};
 
 $(document).ready(() => {
 
   const addSong = $('#add-title');
 
 
-  const state = {
-    playlist: []
-  };
 
   let playlist = localStorage.getItem('playlist');
   if (playlist !== null) {
@@ -60,40 +60,7 @@ $(document).ready(() => {
 
   });
 
-  function appendSong(song) {
 
-    //let button = $('<button>Get the lyrics</button>');
-    let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>')
-    let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
-    let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>')
-    let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
-    li.append(getButton);
-    li.append(deleteButton);
-    li.append(editButton);
-    $('#output-list').hide().append(li).slideDown(800);
-
-
-    getButton.click(() => {
-      console.log(song.artist, song.title);
-      getLyrics(song.artist, song.title);
-
-    });
-
-
-
-    };
-
-    deleteButton.on('click', event => {
-      let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
-      localStorage.setItem('playlist', JSON.stringify(newPlaylist));
-      state.playlist = newPlaylist;
-      $(".errorMessage").slideUp(800, message => {
-        $(this).remove();
-      });
-      li.slideUp('fast', deleteIt => {
-        $(this).remove();
-      });
-    });
 
 
 
@@ -124,26 +91,63 @@ $(document).ready(() => {
   }*/
 
 
-  function getLyrics(artist, title) {
-    $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
-      .done((res) => {
-        // let crossDiv = '<button class="crossDelete">x</button>';
-        let reply = res.lyrics;
-        $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).slideDown(800);
-        $(".errorMessage").slideUp(800, message => {
+});
+})//document ready
+
+
+function getLyrics(artist, title) {
+  $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
+    .done((res) => {
+      // let crossDiv = '<button class="crossDelete">x</button>';
+      let reply = res.lyrics;
+      $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).slideDown(800);
+      $(".errorMessage").slideUp(800, message => {
+        $(this).remove();
+      });
+      const cross = $('.crossDelete');
+      cross.on('click', remove => {
+        $(".lyric-container").slideUp(800, takeAway => {
           $(this).remove();
         });
-        const cross = $('.crossDelete');
-        cross.on('click', remove => {
-          $(".lyric-container").slideUp(800, takeAway => {
-            $(this).remove();
-          });
 
-        });
-      })
-      .fail((res) => {
-        $(".errorMessage").html('<p>Oops, no lyrics found... Try again!</p>').fadeIn('fast');
-      })
-  };
-});
-})
+      });
+    })
+    .fail((res) => {
+      $(".errorMessage").html('<p>Oops, no lyrics found... Try again!</p>').fadeIn('fast');
+    })
+};
+
+
+function appendSong(song) {
+
+  //let button = $('<button>Get the lyrics</button>');
+  let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>');
+  let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
+  let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>');
+  let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
+
+  deleteButton.on('click', event => {
+    let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
+    localStorage.setItem('playlist', JSON.stringify(newPlaylist));
+    state.playlist = newPlaylist;
+    $(".errorMessage").slideUp(800, message => {
+      $(this).remove();
+    });
+    li.slideUp('fast', deleteIt => {
+      $(this).remove();
+    });
+  });
+
+  li.append(getButton);
+  li.append(deleteButton);
+  li.append(editButton);
+  $('#output-list').hide().append(li).slideDown(800);
+
+  getButton.click(() => {
+    console.log(song.artist, song.title);
+    getLyrics(song.artist, song.title);
+  });
+
+
+
+}
