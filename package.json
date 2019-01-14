@@ -1,0 +1,23 @@
+{
+  "name": "agilegroup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doftgrahn/agileprojekt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doftgrahn/agileprojekt/issues"
+  },
+  "homepage": "https://github.com/Doftgrahn/agileprojekt#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}

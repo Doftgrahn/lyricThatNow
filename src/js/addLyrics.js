@@ -1,10 +1,18 @@
 const artist = $('#artist');
 const song = $('#song');
+<<<<<<< HEAD
 const addSong = $('#add-title');
+=======
+>>>>>>> a845936dd8fc26ff6c71b6136447d196e9925681
 let crossDiv = '<button class="crossDelete">x</button>';
 
 
 $(document).ready(() => {
+<<<<<<< HEAD
+=======
+  const addSong = $('#add-title');
+
+>>>>>>> a845936dd8fc26ff6c71b6136447d196e9925681
 
   const state = {
     playlist: []
@@ -35,7 +43,11 @@ $(document).ready(() => {
 
   }
 
+<<<<<<< HEAD
   $("#add-title").click(() => {
+=======
+  addSong.click(() => {
+>>>>>>> a845936dd8fc26ff6c71b6136447d196e9925681
     // console.log("button add song was clicked");
     let artist = $('#artist').val();
     let title = $('#title').val();
@@ -60,7 +72,11 @@ $(document).ready(() => {
 
     //let button = $('<button>Get the lyrics</button>');
     let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>')
+<<<<<<< HEAD
     let getButton = $('<button class="getLyrics btn btn-one" id="getButton">Get lyrics</button>');
+=======
+    let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
+>>>>>>> a845936dd8fc26ff6c71b6136447d196e9925681
     let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>')
     let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
     li.append(getButton);
@@ -72,7 +88,11 @@ $(document).ready(() => {
     getButton.click(() => {
       console.log(song.artist, song.title);
       getLyrics(song.artist, song.title);
+<<<<<<< HEAD
     })
+=======
+    });
+>>>>>>> a845936dd8fc26ff6c71b6136447d196e9925681
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
@@ -88,6 +108,7 @@ $(document).ready(() => {
   };
 
 
+<<<<<<< HEAD
   /*function editSong (artist, title){
     let songInTheList = $(`.content-${song.artist, song.title}`);
     //store info into variables
@@ -110,6 +131,11 @@ $(document).ready(() => {
       appendSong(artistElem.find("input").val(), titleElem.find("input").val());
     })
   }*/
+=======
+/*  function editSong (artist, title){
+
+}*/
+>>>>>>> a845936dd8fc26ff6c71b6136447d196e9925681
 
 
   function getLyrics(artist, title) {
