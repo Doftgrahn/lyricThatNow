@@ -10,6 +10,11 @@ $(document).ready(() => {
     playlist: []
   };
 
+<<<<<<< HEAD:src/js/home.js
+=======
+
+
+>>>>>>> ffa79c9d81fc40fadd685ac6fa19b353dc25de16:addLyrics.js
   let playlist = localStorage.getItem('playlist');
   // console.log('playlist är: ', typeof playlist, playlist);
   if (playlist !== null) {
