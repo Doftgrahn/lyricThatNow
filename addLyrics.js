@@ -8,7 +8,6 @@ $(document).ready(() => {
     playlist: []
   };
 
-
   let playlist = localStorage.getItem('playlist');
   // console.log('playlist är: ', typeof playlist, playlist);
   if (playlist !== null) {
@@ -37,7 +36,7 @@ $(document).ready(() => {
   }
 
   $("#add-title").click(() => {
-    console.log("button add song was clicked");
+    // console.log("button add song was clicked");
     let artist = $('#artist').val();
     let title = $('#title').val();
     appendSong({
@@ -78,10 +77,13 @@ $(document).ready(() => {
 
     deleteButton.on('click', event => {
       let newPlaylist = state.playlist.filter(s => s.artist !== song.artist || song.title !== s.title);
-      console.log(`Funkar newplaylist?`, newPlaylist);
+      // console.log(`Funkar newplaylist?`, newPlaylist);
       localStorage.setItem('playlist', JSON.stringify(newPlaylist));
       state.playlist = newPlaylist;
-      li.fadeOut('fast', deleteIt => {
+      $(".errorMessage").slideUp('slow', message => {
+        $(this).remove();
+      });
+      li.slideUp('fast', deleteIt => {
         $(this).remove();
       });
     });
@@ -94,14 +96,26 @@ $(document).ready(() => {
 
 
   function getLyrics(artist, title) {
-    console.log("button get lyrics was clicked");
+    // console.log("button get lyrics was clicked");
     $.ajax(`https://api.lyrics.ovh/v1/${artist}/${title}?New%20item=`)
-    .done((res) => {
-      let reply = res.lyrics;
-      $(".lyric-container").html('<pre>' + reply + '</pre>');
-    })
-    .fail((res) => {
-      $(".lyric-container").html('<div class="errorMessage">' + "Ooops, no lyrics found" + '</div>');
-    })
-  }
+      .done((res) => {
+        let crossDiv = '<button class="crossDelete">x</button>';
+        let reply = res.lyrics;
+        $(".lyric-container").hide().html('<pre>' + reply + '</pre>').append(crossDiv).slideDown(800);
+        $(".errorMessage").slideUp('slow', message => {
+          $(this).remove();
+        });
+
+        const cross = $('.crossDelete');
+        cross.on('click', remove => {
+          $(".lyric-container").slideUp(800, takeAway => {
+            $(this).remove();
+          });
+        });
+      })
+      .fail((res) => {
+        $(".errorMessage").html('<p>Oops, no lyrics found...</p>').fadeIn('fast');
+      })
+  };
+
 });
