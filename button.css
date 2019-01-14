@@ -14,12 +14,11 @@
   cursor: pointer;
   text-align: center;
   border: 1px solid #d9868a;
+  border-radius: 10px;
   outline: none;
-   background-color: #5a142a;
-   border-radius: 10px;
- /* background-image: linear-gradient(#140a25, #5a142a); */
+  background-color: #5a142a;
+  /* background-image: linear-gradient(#140a25, #5a142a); */
 }
-
 
 .btn-one {
   position: relative;
@@ -33,7 +32,6 @@
 }
 
 .btn-one::before {
-  border-radius:10px;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -50,23 +48,21 @@
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
 }
 
 .btn-one:hover span {
   letter-spacing: 2px;
-  border-radius:10px;
-
+  border-radius: 10px;
 }
 
 .btn-one:hover::before {
   transform: scale(1, 1);
   opacity: 1;
-  border-radius:10px;
-
+  border-radius: 10px;
 }
 
 .btn-one::after {
-  border-radius:10px;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -75,11 +71,12 @@
   height: 100%;
   content: '';
   transition: all .3s;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, .1);
 }
 
 .btn-one:hover::after {
-  border-radius:10px;
   transform: scale(.1, 1);
   opacity: 0;
+  border-radius: 10px;
 }

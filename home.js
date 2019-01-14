@@ -6,11 +6,9 @@ $(document).ready(() => {
 
   console.log(`Vad läggs in här? ${song.val()} `);
 
-
   const state = {
     playlist: []
   };
-
 
   let playlist = localStorage.getItem('playlist');
   // console.log('playlist är: ', typeof playlist, playlist);

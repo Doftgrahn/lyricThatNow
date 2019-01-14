@@ -10,7 +10,6 @@ html {
 
 body {
   margin: 0;
-  border: 1px solid black;
   background-image: linear-gradient(#140a25, #5a142a);
 }
 
@@ -69,7 +68,7 @@ main h1 {
 }
 
 .show-music-video input {
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0 auto;
   padding: 10px;
   color: #fffafa;
@@ -138,10 +137,9 @@ h2 {
 }
 
 main {
-  /* opacity: 0.8; */
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .playlist-text {
@@ -207,15 +205,16 @@ main {
   float: right;
   justify-content: center;
   margin: 0 auto;
-  transition: 1s ease;
+  transition: 0.2 ease;
   letter-spacing: 1px;
   outline: none;
+ text-align: center;
+
 }
 
 .delete:after,
 .getLyrics::after {
   content: '';
-  text-align: center;
 }
 
 .getLyrics:focus {
@@ -255,7 +254,7 @@ label {
   flex-wrap: wrap;
   min-height: 300px;
   margin: 22px;
-  transition: 2s ease;
+  transition: 0.5s ease;
   border-bottom: 5px solid #ea6169;
 }
 
@@ -363,11 +362,10 @@ footer {
   align-items: center;
   flex-flow: nowrap;
   justify-content: center;
-  height: 100px;
+  /* height: 100px; */
   margin: 0 auto;
-  margin: 30px;
   padding: 50px;
-  transition: 1s ease;
+  /* transition: 1s ease; */
 }
 
 #back-to-top {
