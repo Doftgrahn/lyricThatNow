@@ -150,7 +150,4 @@ function appendSong(song) {
     console.log(song.artist, song.title);
     getLyrics(song.artist, song.title);
   });
-
-
-
 }

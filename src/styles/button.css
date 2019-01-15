@@ -90,3 +90,7 @@
 .edit:before {
   clear: both;
 }
+
+#add-title {
+  margin:20px;
+}

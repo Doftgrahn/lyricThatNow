@@ -197,10 +197,13 @@ main {
 .line {
   display: flex;
   flex-direction: row;
+
 }
 
 .line>* {
   flex-grow: 0;
+  margin:0 10px;
+
 }
 
 .line> :first-child {
@@ -220,7 +223,7 @@ main {
   order: 2;
 }
 
-.delete,
+/* .delete,
 .getLyrics {
   font-size: 16px;
   float: right;
@@ -230,7 +233,7 @@ main {
   letter-spacing: 1px;
   outline: none;
   text-align: center;
-}
+} */
 
 .delete:after,
 .getLyrics::after {
