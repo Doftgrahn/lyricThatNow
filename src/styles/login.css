@@ -38,19 +38,22 @@ input[type="user"], input[type="password"] {
   border: none;
   border-radius: 10px;
   padding: 10px;
+  margin:20px;
   background-color: #005d57;
   outline: none;
   /* opacity: 0.6;
         cursor: not-allowed;*/
   border: none;
   color: #fffafa;
+
 }
 
 #submit {
   text-decoration: none;
   font-size: 1.2em;
   outline: none;
-  padding: 10px;
+  padding:0 10px;
+  margin-top: 20px;
 }
 
 .sami-thumbnail-div img {
