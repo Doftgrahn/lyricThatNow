@@ -8,10 +8,8 @@ const state = {
 };
 
 $(document).ready(() => {
-
+  
   const addSong = $('#add-title');
-
-
 
   let playlist = localStorage.getItem('playlist');
   if (playlist !== null) {
@@ -28,17 +26,17 @@ $(document).ready(() => {
   function checkInput (){
 
     if ($('#artist').val() && $('#title').val()){
-         $("#add-title").removeAttr('disabled');
+         addSong.removeAttr('disabled');
          console.log("button is enabled");
     } else {
           //false if value in input is null or empty or undefined
-      $("#add-title").attr('disabled', true);
+      addSong.attr('disabled', true);
       console.log("button is disabled");
     }
 
   }
 
-  $("#add-title").click(() => {
+
   addSong.click(() => {
     // console.log("button add song was clicked");
     let artist = $('#artist').val();
@@ -59,13 +57,6 @@ $(document).ready(() => {
     checkInput();
 
   });
-
-
-
-
-
-
-
 
   /*function editSong (artist, title){
     let songInTheList = $(`.content-${song.artist, song.title}`);
@@ -91,7 +82,6 @@ $(document).ready(() => {
   }*/
 
 
-});
 })//document ready
 
 
