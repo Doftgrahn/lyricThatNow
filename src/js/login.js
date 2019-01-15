@@ -20,7 +20,7 @@
  
  if(form.userid.value == "admin@hotmail.se" && form.pswrd.value == "admin")
   {
-    window.open('app.html')
+    location.replace("app.html");
   }
  else
  {
