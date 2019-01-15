@@ -8,7 +8,7 @@ const state = {
 };
 
 $(document).ready(() => {
-  
+
   const addSong = $('#add-title');
 
   let playlist = localStorage.getItem('playlist');
@@ -58,30 +58,6 @@ $(document).ready(() => {
 
   });
 
-  /*function editSong (artist, title){
-    let songInTheList = $(`.content-${song.artist, song.title}`);
-    //store info into variables
-    let artistElem = songInTheList.find('span.artist');
-    let titleElem = songInTheList.find('span.title');
-    //store current values into variables
-    let orgArtist = artistElem.text();
-    let orgTitle = titleElem.text();
-    //manipulate dom in order to create inputs for changing
-    artistElem.html(`<input value="${orgArtist}" type="text">`);
-    titleElem.html(`<input value="${orgTitle}" type="text">`);
-    //changing the button from edit to save, by hiding and adding new one
-    let saveButton = $('<button class="save btn btn-one"><i class="fas fa-save"></i></button>')
-    let editB = songInTheList.find(".edit");
-    //hide
-    editB.hide();
-    button.after(saveButton);
-    saveButton.click(()=> {
-      //call the function that stores new values from user input
-      appendSong(artistElem.find("input").val(), titleElem.find("input").val());
-    })
-  }*/
-
-
 })//document ready
 
 
@@ -111,12 +87,13 @@ function getLyrics(artist, title) {
 };
 
 
+
 function appendSong(song) {
 
   //let button = $('<button>Get the lyrics</button>');
-  let deleteButton = $('<button class="delete btn btn-one" id="deleteButton"><i class="fas fa-trash-alt"></i></button>');
-  let getButton = $('<button class="getLyrics btn btn-one" id="getButton"><i class="fas fa-align-justify"></i></button>');
-  let editButton = $('<button class="edit btn btn-one" id="editButton"><i class="fas fa-edit"></i></button>');
+  let deleteButton = $('<button class="delete btn btn-one" class="deleteButton"><i class="fas fa-trash-alt"></i></button>');
+  let getButton = $('<button class="getLyrics btn btn-one" class="getButton"><i class="fas fa-align-justify"></i></button>');
+  let editButton = $('<button class="edit btn btn-one" class="editButton"><i class="fas fa-edit"></i></button>');
   let li = $('<li class="line"><span class="content">' + song.artist + ' - ' + song.title + '</span></li>');
 
   deleteButton.on('click', event => {
@@ -140,4 +117,38 @@ function appendSong(song) {
     console.log(song.artist, song.title);
     getLyrics(song.artist, song.title);
   });
+
+  editButton.click(()=> {
+    console.log("edit button was clicked");
+    editSong(li, song);
+  })
+}
+
+function editSong (li, song){
+  let content = li.find('.content');
+  content.html('');
+  //manipulate dom in order to create inputs for changing
+  content.append(`<input class="editArtist" value="${song.artist}" type="text">`);
+  content.append(`<input class="editTitle" value="${song.title}" type="text">`);
+  //changing the button from edit to save, by hiding and adding new one
+  let saveButton = $('<button class="save btn btn-one"><i class="fas fa-save"></i></button>');
+  let editB = li.find(".edit");
+    //hide
+  editB.hide();
+  editB.after(saveButton);
+  saveButton.click(()=> {
+
+    let newArtist = content.find(".editArtist").val();
+    let newTitle = content.find(".editTitle").val();
+    let playlistItem = state.playlist.find( x => x.artist === song.artist && x.title === song.title);
+
+    playlistItem.artist = newArtist;
+    playlistItem.title = newTitle;
+    localStorage.setItem('playlist', JSON.stringify(state.playlist));
+
+    li.remove();
+
+    //call the function that stores new values from user input
+    appendSong({artist: newArtist, title: newTitle});
+  })
 }
