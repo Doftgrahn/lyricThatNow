@@ -109,6 +109,9 @@ function getLyrics(artist, title) {
         $(".lyric-container").slideUp(800, takeAway => {
           $(this).remove();
         });
+        $('.errorMessage').slideUp(800, message => {
+          $(this).remove();
+        })
 
       });
     })

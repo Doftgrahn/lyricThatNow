@@ -365,14 +365,14 @@ pre {
   top: 80%;
   left: 60%;
   display: flex;
+  flex-wrap: wrap;
   display: none;
   align-items: center;
   justify-content: center;
   min-width: 200px;
-  height: 100px;
-  padding: 20px;
+  height: 80px;
+   padding:  20px;
   color: #fffafa;
-  /* border: 2px solid #ea6169; */
   border-radius: 20px;
   background-color: #005d57;
 }
