@@ -8,9 +8,10 @@
 }
 
 .btn {
-  line-height: 50px;
-  width: 150px;
-  height: 50px;
+  line-height: 15px;
+  font-size: 10px;
+  width: 90px;
+  height: 35px;
   cursor: pointer;
   text-align: center;
   /* border: 1px solid #d9868a; */
@@ -18,6 +19,10 @@
   outline: none;
    border:none;
   background-color: #36deaf;
+    margin:10px;
+
+      
+
   /* background-image: linear-gradient(#140a25, #5a142a); */
 }
 
@@ -81,4 +86,11 @@
   transform: scale(.1, 1);
   opacity: 0;
   border-radius: 10px;
+}
+
+.edit {
+  float:right;
+}
+.edit:before {
+  clear: both;
 }
