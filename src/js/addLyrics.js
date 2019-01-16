@@ -128,8 +128,8 @@ function editSong (li, song){
   let content = li.find('.content');
   content.html('');
   //manipulate dom in order to create inputs for changing
-  content.append(`<input class="editArtist" value="${song.artist}" type="text">`);
-  content.append(`<input class="editTitle" value="${song.title}" type="text">`);
+  content.append(`<input class="editArtist input-music" value="${song.artist}" type="text">`);
+  content.append(`<input class="editTitle input-music" value="${song.title}" type="text">`);
   //changing the button from edit to save, by hiding and adding new one
   let saveButton = $('<button class="save btn btn-one"><i class="fas fa-save"></i></button>');
   let editB = li.find(".edit");

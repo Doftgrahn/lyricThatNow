@@ -218,6 +218,7 @@ main {
   background-color: #005d57;
 }
 
+
 .line {
   display: flex;
   flex-direction: row;
@@ -225,12 +226,14 @@ main {
 
 .line>* {
   flex-grow: 0;
-  margin: 0 10px;
+   margin: 0 10px;
 }
 
 .line> :first-child {
   flex-grow: 1;
-  margin-left: auto;
+  white-space: nowrap;
+  /* width:50px; */
+  /* margin-left: auto; */
 }
 
 .line> :nth-child(2) {
